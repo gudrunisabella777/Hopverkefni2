@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+ 
+body {
+    color: var(--color-text);
+    font-size: var(--font-base-body-px);
+    line-height: 1.5;
+    font-family: var(--font-family-base);
+}
+      
+h1, h2, h3 {
+    font-family: var(--font-family-heading);
+}
+      
+img {
+    max-width: 100%;
+}
