@@ -3,14 +3,41 @@
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="styles.scss" />
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css' rel='stylesheet' />
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
     <script type="module" src="../scripts/main.js"></script>
     <header>
       <title>Forsíða</title>
     </header>
   </head>
   <body>
-    <h1>Forsíða</h1>
+    <header>
+      <div class="logo-and-navigation">
+        <a class="logo"><img src="myndir/logo.png" /></a>
+
+        <nav class="navigation">
+          <input type="checkbox" id="menu" />
+          <label for="menu" class="checkbtn">
+            <ion-icon name="menu-outline" class="menu-icon"></ion-icon>
+            <ion-icon name="close-outline" class="menu-close"></ion-icon>
+          </label>
+          <ul class="nav-links">
+            <li><a href="index.html" class="home">DAGSKRÁ</a></li>
+            <li>UM HÁTÍÐINA</li>
+            <li>HAFA SAMBAND</li>
+            <li>MYNDIR</li>
+            <li>SAMGÖNGUR</li>
+            <li>ENGLISH</li>
+            <li>
+              <a href="#">About<span class="usx"> us</span></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header-content"></div>
+    </header>
     <div id="myData"></div>
   </body>
 </html>
