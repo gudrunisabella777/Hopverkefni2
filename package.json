@@ -5,7 +5,8 @@
     "main": ".eslintrc.js",
     "scripts": {
         "dev": "browser-sync start --server --files **/*.js styles.css index.html",
-        "lint": "eslint ./**/*.js",
+        "lint": "stylelint styles.css *.css *.scss --fix",
+        "eslint": "eslint *.js --fix",
         "prettier": "prettier --write .",
         "sass": "sass styles.scss styles.css"
     },
