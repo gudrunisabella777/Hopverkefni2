@@ -17,22 +17,40 @@ html {
 }
 
 body {
+
+ 
+
   background-color: #89e6ab;
   color: var(--color-text);
   font-family: var(--font-family-base);
   font-size: var(--font-base-body-px);
   font-weight: 300;
   line-height: 1.5;
+
 }
 
 h1,
-h2,
-h3 {
+h2 {
   font-family: var(--font-family-heading);
 }
 
 img {
   max-width: 100%;
+}
+
+h1.page-header {
+  word-wrap: break-word;
+  font-family: "Oswald";
+  color: rgb(1, 59, 112);
+  text-align: center;
+  padding: 20px 0;
+  margin: 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.page-header {
+  border-bottom: solid 4px rgb(1, 59, 112);
 }
 
 :root {
