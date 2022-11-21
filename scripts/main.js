@@ -38,18 +38,18 @@ function appendData(data) {
 //*Filtering*//
 //*Skrifa í input sem sýnir alla viðburði sem eiga við innslegin texta*//
 //*Nota select til að velja place úr öllum þeim sem eru skilgreindir í gögnum**//
-<>
-    //*Þetta er prufu kóði fyrir neðan, aðeins að átta mig á skipununum*//
-    //*Filtering*//
-    //*Skrifa í input sem sýnir alla viðburði sem eiga við innslegin texta*//
-    //*Nota select til að velja place úr öllum þeim sem eru skilgreindir í gögnum**//
+
+    /*Þetta er prufu kóði fyrir neðan, aðeins að átta mig á skipununum
+    Filtering
+    Skrifa í input sem sýnir alla viðburði sem eiga við innslegin texta
+    Nota select til að velja place úr öllum þeim sem eru skilgreindir í gögnum
     <input e>
 
     </input>
     
     <select>
 
-    </select></>
+    </select></>*/
 
 
 //*Sorting*//
@@ -69,8 +69,5 @@ console.log(array1);
 //*Paging*//
 //**Birtir aðeins 10 viðburði í einu.. */
 
-<script>
-    
-</script>
 
 
