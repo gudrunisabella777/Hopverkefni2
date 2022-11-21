@@ -16,9 +16,7 @@ html {
 }
 
 body {
-  font-family: "Open Sans";
-  color: rbg(1, 59, 112);
-  background-color: #89E6AB;
+  background-color: #89e6ab;
   color: var(--color-text);
   font-family: var(--font-family-base);
   font-size: var(--font-base-body-px);
@@ -26,7 +24,8 @@ body {
   line-height: 1.5;
 }
 
-h1, h2, h3 {
+h1,
+h2 {
   font-family: var(--font-family-heading);
 }
 
@@ -92,7 +91,8 @@ header .logo-and-navigation {
   list-style: none;
 }
 
-li, a {
+li,
+a {
   color: var(--color-primary2);
   font-size: var(--font-base-size);
   font-weight: 400;
@@ -168,7 +168,9 @@ li, a {
     font-family: var(--font-family-heading);
     font-size: calc(var(--font-base-size) * 4);
   }
-  a:hover, a.active {
+
+  a:hover,
+  a.active {
     background: none;
     color: var(--color-primary);
   }
@@ -209,8 +211,7 @@ li, a {
   width: auto;
 }
 .overview .header-text {
-  width: 100%;
-  grid-column: 2/span 17;
+  grid-column: 2 / span 17;
   grid-template-columns: 100%;
 }
 
