@@ -25,10 +25,20 @@ fetch('../data/events.json')
     });
 
 function appendData(data) {
-    var mainContainer = document.getElementById("myData");
-    for (var i = 0; i < data.length; i++) {
-        var div = document.createElement("div");
-        div.innerHTML = JSON.stringify(data[i].start);
+
+    let mainContainer = document.getElementById("myData");
+    for (let i = 0; i < data.length; i++) {
+        let div = document.createElement("div");
+        let h1 = document.createElement("h1");
+        let p1 = document.createElement("p");
+        let p2 = document.createElement("p");
+        h1.textContent = data[i].language.is.title;
+        p1.textContent = data[i].language.is.place;
+        p2.textContent = data[i].start; //JSON.stringify
+        div.append(h1, p1, p2)
+        //p1.classList.add("p")
+
+    
         mainContainer.appendChild(div);
     }
 }
