@@ -25,9 +25,15 @@ fetch('../data/events.json')
     });
 
 function appendData(data) {
+    let currentTime = data[0].start;
 
     let mainContainer = document.getElementById("myData");
     for (let i = 0; i < data.length; i++) {
+        let startTime = data[i].start;
+        if (startTime != currentTime){
+            let startTime = document.createElement("div");
+            currentTime = startTime;
+        }
         let div = document.createElement("div");
         let h1 = document.createElement("h1");
         let p1 = document.createElement("p");
@@ -40,11 +46,14 @@ function appendData(data) {
         div.append(h1, p1, p2, image)
         p1.classList.add("p")
         p2.classList.add("p")
-        div.classList.add("div")
+        div.classList.add("cards")
+        div.classList.add("content")
+        div.classList.add("start")
     
         mainContainer.appendChild(div);
     }
 }
+
 
 
 function route() {

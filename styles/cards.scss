@@ -1,36 +1,30 @@
 .cards {
-    display: grid;
+  display: grid;
   grid-template-rows: auto;
   gap: var(--gutter);
   margin-bottom: var(--vertical-space);
 }
 
-.cards{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    background-color: white;
-  }
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+  padding: 1rem;
+  background-color: rgb(247, 114, 87);
+  width: 25%;
+}
   
-  
-  .cards > .content-cards {
-    flex: 1;
-    display: flex;
-    flex-direction: row;
-    gap: var(--spacing);
-    padding: 1rem;
-  }
-  
-  .cards > .content-cards > p {
+  .content > p {
     flex: 1;
   }
   
-  .cards > .image {
+  .content > .image {
     order: -1;
     height: 300px;
   }
   
-  .cards > .image img {
+  .content > .image img {
     object-fit: cover;
     object-position: 50% 50%;
     width: 100%;
