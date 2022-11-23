@@ -40,6 +40,26 @@ function appendData(data) {
     }
 }
 
+
+function route() {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    const query = params.get('query');
+
+    if (id) {
+        fetchAndRenderEvent(main, searchForm, id);
+    } else {
+        renderFrontpage(main);
+    }
+}
+
+window.onpopstate = () => {
+    empty(main);
+    route();
+};
+
+route();
+
 //*Þetta er prufu kóði fyrir neðan, aðeins að átta mig á skipununum*//
 
 //*Filtering*//
