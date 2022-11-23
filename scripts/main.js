@@ -116,9 +116,9 @@ function search_Viðburður() {
 }
 
 //Reyna að búa til lista (nota pageing)
-const list_items = {
+/*const list_items = {
     "Event 1-30"
-};
+};*/
 
 const list_element = document.getElementById('list');
 const pagination_element = document.getElementById('pagination');
@@ -162,8 +162,8 @@ function Pagination(page) {
     if(current_page == page) button.classList.add('active');
  
  
-    button.addEventListener('click', function ())
-    return button;
+    /*button.addEventListener('click', function ())
+    return button;*/
     
 }
 
