@@ -59,7 +59,7 @@ function appendData(data) {
     }
 }
 
-
+// gaur sýndi okkur
 
 function route() {
     const params = new URLSearchParams(window.location.search);
@@ -80,7 +80,7 @@ window.onpopstate = () => {
 
 route();
 
-
+// search bar
 
 const searchInput = document.querySelector('.input')
 searchInput.addEventListener("input", (e) => {
