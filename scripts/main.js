@@ -29,10 +29,13 @@ function appendData(data) {
     for (let i = 0; i < data.length; i++) {
         let div = document.createElement("div");
         let h1 = document.createElement("h1");
-        let p = document.createElement("p");
-        p.textContent = data[i].start; //JSON.stringify
+        let p1 = document.createElement("p");
+        let p2 = document.createElement("p");
         h1.textContent = data[i].language.is.title;
-        div.append(h1, p)
+        p1.textContent = data[i].language.is.place;
+        p2.textContent = data[i].start; //JSON.stringify
+        div.append(h1, p1, p2)
+        //p1.classList.add("p")
         mainContainer.appendChild(div);
     }
 }
