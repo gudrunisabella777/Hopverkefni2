@@ -23,8 +23,9 @@ fetch('../data/events.json')
     .catch(function (err) {
         console.log(err);
     });
-console.log(data.language.is.title)
+
 function appendData(data) {
+
     let mainContainer = document.getElementById("myData");
     for (let i = 0; i < data.length; i++) {
         let div = document.createElement("div");
@@ -36,9 +37,31 @@ function appendData(data) {
         p2.textContent = data[i].start; //JSON.stringify
         div.append(h1, p1, p2)
         //p1.classList.add("p")
+
+    
         mainContainer.appendChild(div);
     }
 }
+
+
+function route() {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    const query = params.get('query');
+
+    if (id) {
+        fetchAndRenderEvent(main, searchForm, id);
+    } else {
+        renderFrontpage(main);
+    }
+}
+
+window.onpopstate = () => {
+    empty(main);
+    route();
+};
+
+route();
 
 //*Þetta er prufu kóði fyrir neðan, aðeins að átta mig á skipununum*//
 
@@ -93,9 +116,9 @@ function search_Viðburður() {
 }
 
 //Reyna að búa til lista (nota pageing)
-/*const list_items = {
+const list_items = {
     "Event 1-30"
-}*/
+};
 
 const list_element = document.getElementById('list');
 const pagination_element = document.getElementById('pagination');
@@ -132,7 +155,7 @@ function SetupPagination(items,wrapper,rows_per_page) {
        wrapper.appendChild(btn);
     }
 }
-/*function Pagination(page) {
+function Pagination(page) {
     let button = document.createElement('button');
     button.innerText = page;
 
@@ -142,7 +165,7 @@ function SetupPagination(items,wrapper,rows_per_page) {
     button.addEventListener('click', function ())
     return button;
     
-}*/
+}
 
 DisplayList(list_items,list_element, rows, current_page);
 SetupPagination(list_items, pagination_element, rows);
