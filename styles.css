@@ -261,31 +261,26 @@ li, a {
   margin-bottom: var(--vertical-space);
 }
 
-.cards {
+.content {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  background-color: white;
-}
-
-.cards > .content-cards {
-  flex: 1;
-  display: flex;
-  flex-direction: row;
   gap: var(--spacing);
   padding: 1rem;
+  background-color: rgb(247, 114, 87);
+  width: 25%;
 }
 
-.cards > .content-cards > p {
+.content > p {
   flex: 1;
 }
 
-.cards > .image {
+.content > .image {
   order: -1;
   height: 300px;
 }
 
-.cards > .image img {
+.content > .image img {
   object-fit: cover;
   object-position: 50% 50%;
   width: 100%;
