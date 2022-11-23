@@ -69,5 +69,73 @@ console.log(array1);
 //*Paging*//
 //**Birtir aðeins 10 viðburði í einu.. */
 
+//Search bar í Javascript
+function search_Viðburður() {
+    let input = document.getElementById('Leita').value
+    input=input.toLowerCase();
+    let x = document.getElementsByClassName('Viðburður');
+      
+    for (i = 0; i < x.length; i++) { 
+        if (!x[i].innerHTML.toLowerCase().includes(input)) {
+            x[i].style.display="none";
+        }
+        else {
+            x[i].style.display="list-item";                 
+        }
+    }
+}
 
+//Reyna að búa til lista (nota pageing)
+const list_items = {
+    "Event 1-30"
+};
 
+const list_element = document.getElementById('list');
+const pagination_element = document.getElementById('pagination');
+
+let current_page = 1; 
+let rows = 5;
+
+function DisplayList (items, wrapper, rows_per_page, page){
+    wrapper.innerHTML ="";
+    page--;
+
+    let start = rows_per_page * page;
+    let end = start + rows_per_page;
+    let paginatedItems = items.slice(start, end);
+    
+    for (let i = 0; i < paginatedItems.length; i++) {
+let item =paginatedItems[i];
+
+let item_element = document.createElement('div');
+item_element.classList.add('item');
+item_element.innerText = item;
+
+wrapper.appendChild(item_element);
+    }
+
+}
+
+function SetupPagination(items,wrapper,rows_per_page) {
+    wrapper.innerHTML = "";
+
+    let page_count=Math.ceil(items.length / rows_per_page);
+    for (let i = 1; i < page_count + 1; i++) {
+       let btn = PaginationButton(i);
+       wrapper.appendChild(btn);
+    }
+}
+function Pagination(page) {
+    let button = document.createElement('button');
+    button.innerText = page;
+
+    if(current_page == page) button.classList.add('active');
+ 
+ 
+    button.addEventListener('click', function ())
+    return button;
+    
+}
+
+DisplayList(list_items,list_element, rows, current_page);
+SetupPagination(list_items, pagination_element, rows);
