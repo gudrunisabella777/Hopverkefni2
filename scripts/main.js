@@ -80,6 +80,59 @@ window.onpopstate = () => {
 
 route();
 
+
+
+const searchInput = document.querySelector('.input')
+searchInput.addEventListener("input", (e) => {
+    let value = e.target.value
+    if (value && value.trim().length > 0) {
+        value = value.trim().toLowerCase()
+        setList(data.filter(data => {
+            return data.tags.includes(value)
+        }))
+    } else {
+        clearList()
+    }
+})
+
+clearButton.addEventListener("click", () => {
+    clearList()
+})
+
+const clearButton = document.getElementById('clear')
+clearButton.addEventListener("click", () => {}) ;
+    // 1. write a function that removes any previous results from the page
+
+
+function setList(results) {
+    for (const data of results) {
+        const resultItem = document.createElement('li')
+        resultItem.classList.add('result-item')
+        const text = document.createTextNode(data.tags)
+        resultItem.appendChild(text)
+        list.appendChild(resultItem)
+    }
+    if (results.length === 0) {
+        noResults()
+    }
+}
+
+function clearList() {
+    while (list.firstChild) {
+        list.removeChild(list.firstChild)
+    }
+}
+
+function noResults() {
+    const error = document.createElement('li')
+    error.classList.add('error-message')
+    const text = document.createTextNode('No results found.')
+    error.appentChild(text)
+    list.appendChild(error)
+}
+
+
+
 //*Þetta er prufu kóði fyrir neðan, aðeins að átta mig á skipununum*//
 
 //*Filtering*//
