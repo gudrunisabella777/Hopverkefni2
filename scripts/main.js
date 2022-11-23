@@ -1,3 +1,6 @@
+
+import { isValidNum, randomNumber } from './helpers.js';
+
 /*fetch('../data/events.json')
     .then(function (response) {
         return response.json();
