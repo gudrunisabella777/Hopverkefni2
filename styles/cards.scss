@@ -5,6 +5,7 @@
   margin-bottom: var(--vertical-space);
 }
 
+
 .content {
   flex: 1;
   display: flex;
@@ -24,6 +25,7 @@
     height: 300px;
   }
   
+
   .content > .image img {
     object-fit: cover;
     object-position: 50% 50%;
