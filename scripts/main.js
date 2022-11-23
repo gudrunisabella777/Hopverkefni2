@@ -39,14 +39,16 @@ function appendData(data) {
         }
         let div = document.createElement("div");
         let h1 = document.createElement("h1");
+        //let h2 = document.createElement("h2");
         let p1 = document.createElement("p");
         let p2 = document.createElement("p");
         let image = document.createElement("img")
+        //h2.textContent = data[i].start;
         h1.textContent = data[i].language.is.title;
         p1.textContent = data[i].language.is.place;
         p2.textContent = data[i].start; //JSON.stringify
         image.setAttribute("src", "images/gnott.jpg");
-        div.append(h1, p1, p2, image)
+        div.append(image, h1, p1, p2) //h2
         p1.classList.add("p")
         p2.classList.add("p")
         div.classList.add("cards")
