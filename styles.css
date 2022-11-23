@@ -261,7 +261,6 @@ li, a {
   margin-bottom: var(--vertical-space);
 }
 
-
 .content {
   flex: 1;
   display: flex;
@@ -272,7 +271,6 @@ li, a {
   width: 25%;
 }
 
-
 .content > p {
   flex: 1;
 }
@@ -281,7 +279,6 @@ li, a {
   order: -1;
   height: 300px;
 }
-
 
 .content > .image img {
   object-fit: cover;
