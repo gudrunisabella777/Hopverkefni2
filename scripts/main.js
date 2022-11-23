@@ -32,12 +32,15 @@ function appendData(data) {
         let h1 = document.createElement("h1");
         let p1 = document.createElement("p");
         let p2 = document.createElement("p");
+        let image = document.createElement("img")
         h1.textContent = data[i].language.is.title;
         p1.textContent = data[i].language.is.place;
         p2.textContent = data[i].start; //JSON.stringify
-        div.append(h1, p1, p2)
-        //p1.classList.add("p")
-
+        image.setAttribute("src", "images/gnott.jpg");
+        div.append(h1, p1, p2, image)
+        p1.classList.add("p")
+        p2.classList.add("p")
+        div.classList.add("div")
     
         mainContainer.appendChild(div);
     }
