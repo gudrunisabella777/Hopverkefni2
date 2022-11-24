@@ -1,20 +1,6 @@
 
 import { isValidNum, randomNumber } from './helpers.js';
 
-/*fetch('../data/events.json')
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        console.log(data);
-    })*/
-
-
-/*fetch('../data/events.json')
-    .then((response) => response.json())
-    .then((events) => {
-        console.log(events);
-    });*/
 
 fetch('../data/events.json')
     .then(function (response) {
@@ -39,15 +25,18 @@ function appendData(data) {
         }
         let div = document.createElement("div");
         let h1 = document.createElement("h1");
-        //let h2 = document.createElement("h2");
+        let h2 = document.createElement("h2");
         let p1 = document.createElement("p");
         let p2 = document.createElement("p");
         let image = document.createElement("img")
+        //infoBox.appendChild(el('h2', {}, `20th August ${events.start.substr(11)} - ${events.end.substr(11)}`));
         //h2.textContent = data[i].start;
         h1.textContent = data[i].language.is.title;
+        //h2.textContent = (data[i].start, {}, `20. Ágúst ${events.start.substr(11)} - ${events.end.substr(11)}`);
         p1.textContent = data[i].language.is.place;
         p2.textContent = data[i].start; //JSON.stringify
         image.setAttribute("src", "images/gnott.jpg");
+        div.append(h2)
         div.append(image, h1, p1, p2) //h2
         p1.classList.add("p")
         p2.classList.add("p")
@@ -81,8 +70,65 @@ window.onpopstate = () => {
 route();
 
 // search bar
+/**
+ * skilar promise sem bíður í gefnar millisekúndur
+ * @param {number} ms Tími til að sofa í millisekúndum
+ * @returns 
+ */
+async function sleep(ms) {
+    return new Promise((resolve) => {
+        setTimeout(resolve(null), ms);
+    });
+}
 
-const searchInput = document.querySelector('.input')
+async function queryApi(url) {
+    try {
+        const results = await fetch(url);
+        if(!results.ok) {
+            throw new Error('not results')
+        }
+        return await results.json();
+    } catch (e) {
+        console.warn('unable to query', e);
+        return null;
+    }
+}
+
+export async function searchEvents(query) {
+    const out = await queryApi(API_URL);
+    if (!out) {
+        return[];
+    }
+    return out.filter((event) =>
+    event.language.en.title.toLowerCase().includes(query.toLowerCase()));
+}
+
+export async function getEvents(id) {
+    const out = await queryApi(API_URL);
+    const results = out.find((event) => event.id === parseInt(id, 10));
+    if (!results) {
+        return null;
+    }
+    return results;
+}
+
+export function createSearchInput(searchHandler) {
+    const search = el('input', { type: 'search', placeholder: 'Leita að viðburði', class: 'search_input' });
+    const button = el('button', {class: 'event_search_button'}, 'Leita');
+    const container = el('form', { class: 'search' }, search, button);
+    container.addEventListener('submit', searchHandler);
+    return container;
+  }
+
+export function createSearchResults(events) {
+    //vantar að fylla inn í
+    return el('div', { class: 'result_content'}, el('h2', {class: 'result_title'}, el('a', {href: `/?id=${events.id}`}, events.language.en.title)), dateLocation);
+}
+
+export function createSearchOut(out) {
+    const out = el() // vantar að fylla inn í 
+}
+/*const searchInput = document.querySelector('.input')
 searchInput.addEventListener("input", (e) => {
     let value = e.target.value
     if (value && value.trim().length > 0) {
@@ -129,7 +175,9 @@ function noResults() {
     const text = document.createTextNode('No results found.')
     error.appentChild(text)
     list.appendChild(error)
-}
+}*/
+
+//virkaði ekki
 
 
 
