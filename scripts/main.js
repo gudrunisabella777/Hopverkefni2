@@ -87,7 +87,7 @@ searchInput.addEventListener("input", (e) => {
     let value = e.target.value
     if (value && value.trim().length > 0) {
         value = value.trim().toLowerCase()
-        setList(data.filter(data => {
+        setList(events.filter(data => {
             return data.tags.includes(value)
         }))
     } else {
@@ -106,8 +106,8 @@ clearButton.addEventListener("click", () => {}) ;
 
 function setList(results) {
     for (const data of results) {
-        const resultItem = document.createElement('li')
-        resultItem.classList.add('result-item')
+        const resultItem = document.createElement('tags')
+        resultItem.classList.add('results-container')
         const text = document.createTextNode(data.tags)
         resultItem.appendChild(text)
         list.appendChild(resultItem)

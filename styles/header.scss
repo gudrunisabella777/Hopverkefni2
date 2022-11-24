@@ -22,13 +22,14 @@ header {
   }
 
   .navigation {
-
+    display: flex;
+    justify-content: space-between;
   }
 }
+
 .logo-and-navigation {
-  
   .logo {
-    max-width: 100%;
+    max-width: 50%;
   }
   display: flex;
   justify-content: space-between;
@@ -203,3 +204,4 @@ li, a {
     width: calc(100% - (2 * var(--offset)));
   }
 }
+
