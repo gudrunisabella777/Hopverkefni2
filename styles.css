@@ -74,6 +74,11 @@ header .logo-and-navigation {
   display: flex;
   flex-direction: row;
 }
+header .navigation {
+  display: flex;
+  justify-content: space-between;
+}
+
 .logo-and-navigation {
   display: flex;
   justify-content: space-between;
@@ -83,7 +88,7 @@ header .logo-and-navigation {
   margin: calc(var(--vertical-space) / 2) auto;
 }
 .logo-and-navigation .logo {
-  max-width: 100%;
+  max-width: 50%;
 }
 
 .navigation ul li {
