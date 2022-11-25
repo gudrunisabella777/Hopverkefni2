@@ -4,3 +4,13 @@ form {
   justify-content: center;
   padding: 1.5rem;
 }
+
+main {
+  margin: 0 auto;
+  max-width: var(--max-width);
+}
+
+#map {
+  height: 50vh;
+  width: 50vw;
+}
