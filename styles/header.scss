@@ -1,21 +1,21 @@
+/* stylelint-disable selector-max-id */
 header {
-  background-image: url(../images/menningarnott-header.png);
+  background-attachment: scroll;
+  background-color: #89e6ab;
+  background-image: url('../images/menningarnott-header.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  color: var(--color-text);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  width: 100%;
   height: 30rem;
-  color: var(--color-text);
-  background-color: #89E6AB;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: center;
-  background-size: contain;
-
-  max-width: var(--max-width);
+  justify-content: space-between;
   margin: 0 auto;
+  max-width: var(--max-width);
   padding-bottom: 15rem;
-  
+  width: 100%;
+
   .logo-and-navigation {
     display: flex;
     flex-direction: row;
@@ -28,28 +28,26 @@ header {
 }
 
 .logo-and-navigation {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: calc(var(--vertical-space) / 2) auto;
+  max-width: var(--max-width);
+  width: calc(100% - (2 * var(--offset)));
+
   .logo {
     max-width: 50%;
   }
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: var(--max-width);
-  width: calc(100% - (2 * var(--offset)));
-  margin: calc(var(--vertical-space) / 2) auto;
-  
 }
-
 
 .navigation ul li {
   display: inline-block;
-  padding-left: calc(var(--spacing));
   list-style: none;
-
+  padding-left: calc(var(--spacing));
 }
 
-
-li, a {
+li,
+a {
   color: var(--color-primary2);
   font-size: var(--font-base-size);
   font-weight: 400;
@@ -61,13 +59,14 @@ li, a {
 }
 
 #menu {
-    display: none;
+  display: none;
 }
+
 .checkbtn {
-  font-size: calc(var(--font-base-size) * 2);
-  float: right;
   cursor: pointer;
   display: none;
+  float: right;
+  font-size: calc(var(--font-base-size) * 2);
 }
 
 //minna en 600px
@@ -75,30 +74,32 @@ li, a {
   header {
     background-position: left;
   }
+
   .header-text {
     padding-top: 6rem;
+
     h1 {
       font-size: 2.5rem;
     }
   }
 
-
-
-
   .header-content {
     text-align: center;
+
     .header-main-text {
       display: none;
     }
+
     .header-mobile-text {
       display: block;
       margin: 0 auto;
     }
+
     .details {
       display: block;
+      list-style: none;
       margin: 0 auto;
       order: +1;
-      list-style: none;
       text-align: left;
     }
   }
@@ -109,54 +110,57 @@ li, a {
   }
 
   .nav-links {
-    position: fixed;
-    width: 100%;
     height: 100%;
     padding-top: 3rem;
-    top: 5rem;
     right: -100%;
     text-align: center;
-    transition: all .5s;
-
+    top: 5rem;
+    transition: all 0.5s;
   }
+
   .navigation ul li {
-    a {
-      color: var(--color-text);
-      font-family: var(--font-family-heading);
-      font-size: calc(var(--font-base-size) *4);
-    }
     display: block;
     padding-bottom: calc(var(--spacing));
     padding-left: 0;
+    /* stylelint-disable-next-line selector-max-compound-selectors */
+    a {
+      color: var(--color-text);
+      font-family: var(--font-family-heading);
+      font-size: calc(var(--font-base-size) * 4);
+    }
   }
-  a:hover, a.active {
+
+  /* stylelint-disable-next-line selector-no-qualifying-type */
+  a:hover a.active {
     background: none;
     color: var(--color-primary);
   }
+
   .home {
     display: block;
   }
+
   .usx {
     display: none;
   }
+
   .menu-close {
     display: none;
   }
 
   #menu:checked ~ ul {
-    right: 0;
     background: var(--color-background);
-
+    right: 0;
   }
-  #menu:checked ~ .checkbtn{
-    
+
+  #menu:checked ~ .checkbtn {
     .menu-icon {
       display: none;
     }
+
     .menu-close {
       display: block;
     }
-   
   }
 }
 
@@ -176,27 +180,14 @@ li, a {
     grid-template-rows: auto;
     max-width: var(--max-width);
   }
+
   input {
     width: auto;
   }
-  // a {
-  //   display: flex;
-  //   justify-content:flex-end;
-  // }
+
   .header-text {
-    width: 100%;
-    grid-column: 2/span 17;
+    grid-column: 2 / span 17;
     grid-template-columns: 100%;
-  }
-
-}
-
-@media (min-width: 600px) {
-  .video-check {
-    display: flex;
-    justify-content: flex-end;
-    max-width: var(--max-width);
-    width: calc(100% - (2 * var(--offset)));
+    width: 100%;
   }
 }
-

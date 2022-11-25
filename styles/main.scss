@@ -6,7 +6,8 @@ form {
 }
 
 main {
-  background-color: #89E6AB;
+  /* stylelint-disable-next-line color-hex-case */
+  background-color: #89e6ab;
   margin: 0 auto;
   max-width: var(--max-width);
 }
