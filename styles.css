@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 * {
   margin: 0;
   padding: 0;
@@ -10,23 +11,25 @@ html {
 }
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
 body {
-  font-family: "Open Sans";
+  background-color: #89e6ab;
   color: rbg(1, 59, 112);
-  background-color: #89E6AB;
   color: var(--color-text);
+  font-family: 'Open Sans';
   font-family: var(--font-family-base);
   font-size: var(--font-base-body-px);
   font-weight: 300;
   line-height: 1.5;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: var(--font-family-heading);
 }
 
@@ -43,8 +46,8 @@ img {
   --color-border: #ccc;
   --font-base-body-px: 16px;
   --font-base-size: 1rem;
-  --font-family-base: "Nunito", Helvetica, Arial, sans-serif;
-  --font-family-heading: "Domine", Georgia, serif;
+  --font-family-base: 'Nunito', Helvetica, Arial, sans-serif;
+  --font-family-heading: 'Domine', Georgia, serif;
   /* Grid stillingar */
   --columns: 12;
   --gutter: 30px;
@@ -54,50 +57,54 @@ img {
 }
 
 header {
-  background-image: url(../images/menningarnott-header.png);
+  background-attachment: scroll;
+  background-color: #89e6ab;
+  background-image: url('../images/menningarnott-header.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  color: var(--color-text);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  width: 100%;
   height: 30rem;
-  color: var(--color-text);
-  background-color: var(--color-background);
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: center;
-  background-size: contain;
-  max-width: var(--max-width);
+  justify-content: space-between;
   margin: 0 auto;
+  max-width: var(--max-width);
   padding-bottom: 15rem;
+  width: 100%;
 }
+
 header .logo-and-navigation {
   display: flex;
   flex-direction: row;
 }
+
 header .navigation {
   display: flex;
   justify-content: space-between;
 }
 
 .logo-and-navigation {
+  align-items: center;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  margin: calc(var(--vertical-space) / 2) auto;
   max-width: var(--max-width);
   width: calc(100% - 2 * var(--offset));
-  margin: calc(var(--vertical-space) / 2) auto;
 }
+
 .logo-and-navigation .logo {
   max-width: 50%;
 }
 
 .navigation ul li {
   display: inline-block;
-  padding-left: calc(var(--spacing));
   list-style: none;
+  padding-left: calc(var(--spacing));
 }
 
-li, a {
+li,
+a {
   color: var(--color-primary2);
   font-size: var(--font-base-size);
   font-weight: 400;
@@ -113,83 +120,101 @@ li, a {
 }
 
 .checkbtn {
-  font-size: calc(var(--font-base-size) * 2);
-  float: right;
   cursor: pointer;
   display: none;
+  float: right;
+  font-size: calc(var(--font-base-size) * 2);
 }
 
 @media (max-width: 600px) {
   header {
     background-position: left;
   }
+
   .header-text {
     padding-top: 6rem;
   }
+
   .header-text h1 {
     font-size: 2.5rem;
   }
+
   .header-content {
     text-align: center;
   }
+
   .header-content .header-main-text {
     display: none;
   }
+
   .header-content .header-mobile-text {
     display: block;
     margin: 0 auto;
   }
+
   .header-content .details {
     display: block;
+    list-style: none;
     margin: 0 auto;
     order: 1;
-    list-style: none;
     text-align: left;
   }
+
   .checkbtn {
     cursor: pointer;
     display: block;
   }
+
   .nav-links {
-    position: fixed;
-    width: 100%;
     height: 100%;
     padding-top: 3rem;
-    top: 5rem;
+    position: fixed;
     right: -100%;
     text-align: center;
+    top: 5rem;
     transition: all 0.5s;
+    width: 100%;
   }
+
   .navigation ul li {
     display: block;
     padding-bottom: calc(var(--spacing));
     padding-left: 0;
   }
+
   .navigation ul li a {
     color: var(--color-text);
     font-family: var(--font-family-heading);
     font-size: calc(var(--font-base-size) * 4);
   }
-  a:hover, a.active {
+
+  a:hover,
+  a.active {
     background: none;
     color: var(--color-primary);
   }
+
   .home {
     display: block;
   }
+
   .usx {
     display: none;
   }
+
   .menu-close {
     display: none;
   }
+
   #menu:checked ~ ul {
-    right: 0;
     background: var(--color-background);
+    right: 0;
   }
+
   #menu:checked ~ .checkbtn .menu-icon {
     display: none;
   }
+
   #menu:checked ~ .checkbtn .menu-close {
     display: block;
   }
@@ -202,18 +227,21 @@ li, a {
     text-align: center;
   }
 }
+
 .overview .header-content {
   display: grid;
   grid-template-rows: auto;
   max-width: var(--max-width);
 }
+
 .overview input {
   width: auto;
 }
+
 .overview .header-text {
-  width: 100%;
-  grid-column: 2/span 17;
+  grid-column: 2 / span 17;
   grid-template-columns: 100%;
+  width: 100%;
 }
 
 @media (min-width: 600px) {
@@ -224,6 +252,7 @@ li, a {
     width: calc(100% - 2 * var(--offset));
   }
 }
+
 * {
   box-sizing: border-box;
   font-family: sans-serif;
@@ -237,29 +266,29 @@ body {
 
 header {
   align-items: center;
-  background-color: #eee;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  background-color: #89e6ab;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: space-between;
 }
 
 main {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 main .list {
-  width: 100%;
-  max-width: 768px;
   background-color: #fff;
   border: 1px solid #ccc;
   margin-top: 25px;
+  max-width: 768px;
+  width: 100%;
 }
 
 main .list .item {
-  padding: 15px;
   border-bottom: 1px solid #ccc;
+  padding: 15px;
 }
 
 main .list .item:last-of-type {
@@ -271,83 +300,83 @@ main .list .item:hover {
 }
 
 .pagenumbers {
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
 }
 
 .pagenumbers button {
-  width: 50px;
-  height: 50px;
   appearance: none;
+  background-color: #4ae;
   border: none;
-  outline: none;
-  cursor: pointer;
-  background-color: #44aaee;
-  margin: 5px;
-  transition: 0.4s;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
   color: #fff;
+  cursor: pointer;
   font-size: 18px;
-  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+  height: 50px;
+  margin: 5px;
+  outline: none;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  transition: 0.4s;
+  width: 50px;
 }
 
 .pagenumbers button:hover {
-  background-color: #44eeaa;
+  background-color: #4ea;
 }
 
 .pagenumbers button.active {
-  background-color: #44eeaa;
-  box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.2);
+  background-color: #4ea;
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
 }
 
 .pagination {
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
 }
 
 .pagenumbers button {
-  width: 50px;
-  height: 50px;
   appearance: none;
-  border: none;
-  outline: none;
-  cursor: pointer;
   background-color: #89e6ab;
-  margin: 5px;
-  transition: 0.4s;
+  border: none;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
   color: #fff;
+  cursor: pointer;
   font-size: 18px;
-  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+  height: 50px;
+  margin: 5px;
+  outline: none;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  transition: 0.4s;
+  width: 50px;
 }
 
 .pagenumbers button:hover {
-  background-color: #44eeaa;
+  background-color: #4ea;
 }
 
 .pagenumber button.active {
-  background-color: #44eeaa;
-  box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.2);
+  background-color: #4ea;
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
 }
 
 .cards {
   display: grid;
-  grid-template-rows: auto;
   gap: var(--gutter);
+  grid-template-rows: auto;
   margin-bottom: var(--vertical-space);
 }
 
 .content {
-  flex: 1;
+  background-color: rgb(247, 114, 87);
   display: flex;
+  flex: 1;
   flex-direction: column;
   gap: var(--spacing);
   padding: 1rem;
-  background-color: rgb(247, 114, 87);
   width: 25%;
 }
 
@@ -356,15 +385,15 @@ main .list .item:hover {
 }
 
 .content > .image {
-  order: -1;
   height: 300px;
+  order: -1;
 }
 
 .content > .image img {
+  height: 300px;
   object-fit: cover;
   object-position: 50% 50%;
   width: 100%;
-  height: 300px;
 }
 
 form {
@@ -375,6 +404,7 @@ form {
 }
 
 main {
+  background-color: #89e6ab;
   margin: 0 auto;
   max-width: var(--max-width);
 }
@@ -383,5 +413,3 @@ main {
   height: 50vh;
   width: 50vw;
 }
-
-/*# sourceMappingURL=styles.css.map */
