@@ -1,3 +1,4 @@
+/* stylelint-disable selector-pseudo-element-colon-notation */
 * {
   margin: 0;
   padding: 0;
@@ -14,23 +15,24 @@ html {
   box-sizing: inherit;
 }
 
- 
 body {
-  font-family: 'Open Sans';
-  //font-size: 16px;
+  background-color: #89e6ab;
   color: rbg(1, 59, 112);
-  background-color: #89E6AB;
   color: var(--color-text);
+  font-family: Open Sans;
+  //font-size: 16px;
   font-family: var(--font-family-base);
   font-size: var(--font-base-body-px);
   font-weight: 300;
   line-height: 1.5;
 }
-      
-h1, h2, h3 {
+
+h1,
+h2,
+h3 {
   font-family: var(--font-family-heading);
 }
-      
+
 img {
   max-width: 100%;
 }

@@ -101,11 +101,7 @@ function DisplayList (items, wrapper, rows_per_page, page){
     for (let i = 0; i < paginatedItems.length; i++) {
     let item =paginatedItems[i].language.is.title;
     let startTime = paginatedItems[i].start;
-    
-        //infoBox.appendChild(el('h2', {}, `20th August ${events.start.substr(11)} - ${events.end.substr(11)}`));
-        //h2.textContent = data[i].start;
         h1.textContent = paginatedItems[i].language.is.title;
-        //h2.textContent = (data[i].start, {}, `20. Ágúst ${events.start.substr(11)} - ${events.end.substr(11)}`);
         p1.textContent = paginatedItems[i].language.is.place;
         p2.textContent = paginatedItems[i].start; //JSON.stringify
         image.setAttribute("src", "images/8.jpg");
