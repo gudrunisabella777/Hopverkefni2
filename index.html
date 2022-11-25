@@ -4,13 +4,19 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="styles.css" />
     <link
-      href="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css"
       rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+      crossorigin=""
     />
-
+    <script
+      src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+      crossorigin=""
+    ></script>
+    <script type="module" src="/main.js"></script>
   </head>
   <body>
-    <script type="module" src="../scripts/main.js"></script>
     <header>
       <div class="logo-and-navigation">
         <nav class="navigation">
@@ -34,7 +40,7 @@
         </nav>
       </div>
     </header>
-    <main>
+    <main class="layout_main">
       <div class="form-container">
         <form class="form">
           <input
@@ -47,25 +53,12 @@
           <button id="clear" class="clear-results">clear</button>
         </form>
       </div>
-      <div class="results-container">
-        <ul class="results-list" id="list"></ul>
-      </div>
-      <div id="myData"></div>
       <div class="list" id="list"></div>
       <div class="pagenumbers" id="pagination"></div>
       <div class="start">
         <h2 class="timi"></h2>
       </div>
-      <div class="cards">
-        <div class="content">
-          <h1></h1>
-          <p class="stadsetning"></p>
-          <p class="timi"></p>
-          <div class="image">
-            <img src="images/" alt="" />
-          </div>
-        </div>
-      </div>
+      <div class="cards"></div>
     </main>
   </body>
 </html>
